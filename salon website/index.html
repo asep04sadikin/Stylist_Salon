@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <title>My Website</title> 
+        <link rel="shortcut icon" href="images/logo-icon.png">
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="all"> 
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css" media="all"> 
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+        <link rel="stylesheet" href="css/style_slider.css" type="text/css" media="all" /> 
+        <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+        function hideURLbar(){ window.scrollTo(0,1); } </script>         
+        <!-- /css files -->
+        <!-- js files -->         
+        <script type="text/javascript" src="js/jquery.js"></script>         
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/slider.js"></script>
+        <script type="text/javascript" src="js/initslider-1.js"></script> 
+        <script src="js/modernizr.custom.js"></script>         
+        <!-- /js files -->
+    </head>
+    <body>
+        <!-- top section -->         
+        <div class="top" id="home"> 
+            <div class="container"> 
+                <div class="row" id="banner"> 
+                    <div class="col-sx-6 col-md-6 kiri"> 
+                        <ul> 
+                            <li> 
+                                <a><i class="glyphicon glyphicon-calendar" aria-hidden="true"></i><span id="jam"></span></a> 
+                            </li>                             
+                            <script>
+                              var months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+                              var myDays = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum&#39;at', 'Sabtu'];
+                              var date = new Date();
+                              var day = date.getDate();
+                              var month = date.getMonth();
+                              var thisDay = date.getDay(),
+                                  thisDay = myDays[thisDay];
+                              var yy = date.getYear();
+                              var year = (yy < 1000) ? yy + 1900 : yy;
+                              document.getElementById('jam').innerHTML = thisDay + ', ' + day + ' ' + months[month] + ' ' + year;
+                             </script>                             
+                            <li> 
+                                <a><i class="glyphicon glyphicon-log-in" aria-hidden="true"></i>4th Floor, Menara Satu. Plaza Indonesia, Aoron Std.</a> 
+                            </li>                             
+                        </ul>                         
+                    </div>                     
+                    <div class="col-sx-6 col-md-6 kanan"> 
+                        <ul> 
+                            <li> 
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Google+"><i class="fa fa-lg fa-google-plus-square" aria-hidden="true"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Twitter"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+                                <a href="#" data-toggle="tooltip" data-placement="bottom" title="Vimeo"><i class="fa fa-lg fa-vimeo-square" aria-hidden="true"></i></a> 
+                            </li>                             
+                            <li> 
+                                <a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-envelope" aria-hidden="true"></i> Register For Free</a>
+                            </li> 
+                            <div id="myModal" class="modal fade" role="dialog">
+                              
+
+                                <!-- Modal content-->
+                                <div id="login-overlay" class="modal-dialog">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                                              <h4 class="modal-title" id="myModalLabel">Login to My Website.com</h4>
+                                          </div>
+                                          <div class="modal-body">
+                                              <div class="row">
+                                                  <div class="col-xs-6">
+                                                      <div class="well">
+                                                          <form id="loginForm" method="POST" action="/login/" novalidate="novalidate">
+                                                              <div class="form-group">
+                                                                  <label for="username" class="control-label">Username</label>
+                                                                  <input type="text" class="form-control" id="username" name="username" value="" required="" title="Please enter you username" placeholder="example@gmail.com">
+                                                                  <span class="help-block"></span>
+                                                              </div>
+                                                              <div class="form-group">
+                                                                  <label for="password" class="control-label">Password</label>
+                                                                  <input type="password" class="form-control" id="password" name="password" value="" required="" title="Please enter your password">
+                                                                  <span class="help-block"></span>
+                                                              </div>
+                                                              <div id="loginErrorMsg" class="alert alert-error hide">Wrong username or password</div>
+                                                              <div class="checkbox">
+                                                                  <label>
+                                                                      <input type="checkbox" name="remember" id="remember"> Remember login
+                                                                  </label>
+                                                                  <p class="help-block">(if this is a private computer)</p>
+                                                              </div>
+                                                              <button type="submit" class="btn btn-success btn-block">Login</button>
+                                                              <a href="/forgot/" class="btn btn-default btn-block">Help to login</a>
+                                                          </form>
+                                                      </div>
+                                                  </div>
+                                                  <div class="col-xs-6">
+                                                      <p class="lead">Register now for <span class="text-success">FREE</span></p>
+                                                      <ul class="list-unstyled" style="line-height: 2">
+                                                          <p><span class="fa fa-check text-success"></span> See all your orders</p>
+                                                          <p><span class="fa fa-check text-success"></span> Fast re-order</p>
+                                                          <p><span class="fa fa-check text-success"></span> Save your favorites</p>
+                                                          <p><span class="fa fa-check text-success"></span> Fast checkout</p>
+                                                          <p><span class="fa fa-check text-success"></span> Get a gift <small>(only new customers)</small></p>
+                                                          <p><a href="/read-more/"><u>Read more</u></a></p>
+                                                      </ul>
+                                                      <p><a href="/new-customer/" class="btn btn-info btn-block">Yes please, register now!</a></p>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+
+                              
+                            </div>                            
+                            <li> 
+                                <a href="#"><i class="fa fa-phone" aria-hidden="true"></i> (+62) 00-0000-0000</a> 
+                            </li>                             
+                        </ul>
+                        
+                                                 
+                    </div>                     
+                    <script>
+                        $(document).ready(function(){
+                            $('[data-toggle="tooltip"]').tooltip();
+                        });
+                    </script>                     
+                </div>                 
+            </div>             
+        </div>
+        <div class="navigation-bar"> 
+            <div class="navigasi"> 
+                <div class="container"> 
+                    <nav class="navbar navbar-static-top nav-justified"> 
+                        <div class="navbar-header"> 
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> 
+                                <span class="sr-only">Toggle navigation</span> 
+                                <span class="icon-bar"></span> 
+                                <span class="icon-bar"></span> 
+                                <span class="icon-bar"></span> 
+                            </button>                             
+                            <div class="logo">
+                              <h1><a href="index.html"><span>S</span>TYLIST MAKE OVER</a></h1>
+                            </div> 
+                        </div>                         
+                        <div id="navbar" class="navbar-collapse collapse"> 
+                            <ul class="nav navbar-nav navbar-right"> 
+                                <li class="grad"> 
+                                    <a href="index.html" class="active"><i class="fa fa-home fa-fw"></i> Home</a>
+                                </li>                                 
+                                <li> 
+                                    <a href="#content-3-3"><i class="fa fa-cubes"></i> Product</a>
+                                </li>                                 
+                                <li> 
+                                    <a href="#content-king"><i class="fa fa-magic"></i> Our Service</a>
+                                </li>                                 
+                                <li> 
+                                    <a href="#banner-so"><i class="fa fa-heart"></i> Special Offer</a>
+                                </li>                                 
+                                <li> 
+                                    <a href="#team"><i class="fa fa-group"></i> The Team</a>
+                                </li>                                 
+                                <li> 
+                                    <a href="#"><i class="fa fa-search fa-lg"></i></a>
+                                </li>                                 
+                            </ul>                             
+                        </div>                         
+                    </nav>                     
+                </div>                 
+            </div>
+        </div>         
+        <!-- navigation section -->
+        <!-- Insert to your webpage where you want to display the slider -->
+        <div id="amazingslider-wrapper-1" style="display:block;position:relative;max-width:100%;margin:0 auto;">
+            <div id="amazingslider-1" style="display:block;position:relative;margin:0 auto;">
+                <ul class="amazingslider-slides" style="display:none;">
+                    <li><img src="images/102448.jpg" alt="Beauty Skin"  title="Beauty Skin" data-description="Lorem Ipsum Dolor Sit Amet" />
+                        <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal2">Learn More</button>
+                    </li>
+                    <li><img src="images/212812.jpg" alt="Beauty Skin"  title="Long Hair Lasting" data-description="Lorem Ipsum Dolor Sit Amet" />
+                        <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal3">Learn More</button>
+                    </li>
+                    <li><img src="images/409413.jpg" alt="Beauty Skin"  title="Skin Care" data-description="Lorem Ipsum Dolor Sit Amet" />
+                        <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal4">Learn More</button>
+                    </li>
+                    <li><img src="images/431113.jpg" alt="Beauty Skin"  title="Strong & Beauty Hair" data-description="Lorem Ipsum Dolor Sit Amet" />
+                        <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal5">Learn More</button>
+                    </li>
+                    <li><img src="images/433531.jpg" alt="Beauty Skin"  title="find Out More" data-description="Lorem Ipsum Dolor Sit Amet" />
+                        <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal6">Learn More</button>
+                    </li>
+                    <li><img src="images/462887.jpg" alt="Beauty Skin"  title="Charm & Bright" data-description="Lorem Ipsum Dolor Sit Amet" />
+                        <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal7">Learn More</button>
+                    </li>
+                    <li><img src="images/617813.jpg" alt="Beauty Skin"  title="Original Beauty Skin" data-description="Lorem Ipsum Dolor Sit Amet" />
+                        <button type="button" class="btn btn-danger btn-lg" data-toggle="modal" data-target="#myModal8">Learn More</button>
+                    </li>
+                </ul>
+                <ul class="amazingslider-thumbnails" style="display:none;">
+                    <li><img src="images/tootips/102448-tn.jpg" alt="Beauty Skin" title="Beauty Skin" /></li>
+                    <li><img src="images/tootips/212812-tn.jpg" alt="Beauty Skin" title="Beauty Skin" /></li>
+                    <li><img src="images/tootips/409413-tn.jpg" alt="Beauty Skin" title="Beauty Skin" /></li>
+                    <li><img src="images/tootips/431113-tn.jpg" alt="Beauty Skin" title="Beauty Skin" /></li>
+                    <li><img src="images/tootips/433531-tn.jpg" alt="Beauty Skin" title="Beauty Skin" /></li>
+                    <li><img src="images/tootips/462887-tn.jpg" alt="Beauty Skin" title="Beauty Skin" /></li>
+                    <li><img src="images/tootips/617813-tn.jpg" alt="Beauty Skin" title="Beauty Skin" /></li>
+                </ul>
+            </div>
+            <!-- Modal2 -->
+            <div id="myModal2" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Beauty Skin</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="images/102448.jpg" style="max-width: 100%;" />
+                            <hr>
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal3 -->
+            <div id="myModal3" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Long Hair Lasting</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="images/212812.jpg" style="max-width: 100%;" />
+                            <hr>
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal4 -->
+            <div id="myModal4" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Skin Care</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="images/409413.jpg" style="max-width: 100%;" />
+                            <hr>
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal5 -->
+            <div id="myModal5" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Strong & Beauty Hair</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="images/431113.jpg" style="max-width: 100%;" />
+                            <hr>
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal6 -->
+            <div id="myModal6" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">find Out More</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="images/433531.jpg" style="max-width: 100%;" />
+                            <hr>
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal7 -->
+            <div id="myModal7" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Charm & Bright</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="images/462887.jpg" style="max-width: 100%;" />
+                            <hr>
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal8 -->
+            <div id="myModal8" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Original Beauty Skin</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="images/617813.jpg" style="max-width: 100%;" />
+                            <hr>
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <!-- content section --> 
+        
+        <section id="content-3-3" class="content-block-nopad content-3-3"> 
+            <div class="overlay overlay-pink"> 
+                <div class="container text-center"> 
+                    <h2>Treatments, Skin Care, Makeup</h2> 
+                    <h1>Make Your Skin Glow and Charm</h1> 
+                    <div class="col-md-6 col-md-offset-3 text-center"> 
+                        <div class="col-md-6"> 
+                            <a href="product.html" class="btn btn-block btn-outline btn-outline-lg outline-light">Buy The Product</a> 
+                        </div>
+                        <div class="col-md-6"> 
+                            <a href="#" class="btn btn-block btn-outline btn-outline-lg outline-light" data-toggle="modal" data-target="#myModal9">Find out more</a> 
+                        </div>
+                    </div>                     
+                </div>                 
+                <!-- /.container -->                 
+            </div>
+        </section>
+        <div id="myModal9" class="modal fade" role="dialog">
+          <div class="modal-dialog modal-lg">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">The Product & Guarantee</h4>
+              </div>
+              <div class="modal-body">
+                <img src="images/make_up_palette.jpg" style="max-width: 100%; margin: 0 auto;" />
+                <hr>
+                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>        
+        <!-- welcome section -->          
+        <section id="content-2-9" class="content-2-9">
+            <div class="project-wrapper">
+                <div class="col-md-3 col-sm-6 project">
+                    <div class="background-image-holder">
+                        <img class="background-image" alt="Background Image" src="images/cosmetics.jpg">
+                    </div>
+                    <div class="hover-state">
+                        <div class="align-vertical">
+                            <h3>See style 1</h3>
+                            <p>Mustache retro chillwave YOLO four loko photo booth.</p>
+                            <a href="#" class="btn btn-outline outline-light" data-toggle="modal" data-target="#myModal12">See The Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="myModal12" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">style 1</h4>
+                            </div>
+                            <div class="modal-body">
+                                <img src="images/cosmetics.jpg" style="max-width: 100%;" />
+                                <hr>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 project">
+                    <div class="background-image-holder">
+                        <img class="background-image" alt="Background Image" src="images/cosmetics4.jpg">
+                    </div>
+                    <div class="hover-state">
+                        <div class="align-vertical">
+                            <h3>See style 2</h3>
+                            <p>Mustache retro chillwave YOLO four loko photo booth.</p>
+                            <a href="#" class="btn btn-outline outline-light" data-toggle="modal" data-target="#myModal13">See The Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="myModal13" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">style 2</h4>
+                            </div>
+                            <div class="modal-body">
+                                <img src="images/cosmetics4.jpg" style="max-width: 100%;" />
+                                <hr>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 project">
+                    <div class="background-image-holder">
+                        <img class="background-image" alt="Background Image" src="images/cosmetics1.jpg">
+                    </div>
+                    <div class="hover-state">
+                        <div class="align-vertical">
+                            <h3>See style 3</h3>
+                            <p>Mustache retro chillwave YOLO four loko photo booth.</p>
+                            <a href="#" class="btn btn-outline outline-light" data-toggle="modal" data-target="#myModal14">See The Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="myModal14" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">style 3</h4>
+                            </div>
+                            <div class="modal-body">
+                                <img src="images/cosmetics1.jpg" style="max-width: 100%;" />
+                                <hr>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 project">
+                    <div class="background-image-holder">
+                        <img class="background-image" alt="Background Image" src="images/cosmetics2.jpg">
+                    </div>
+                    <div class="hover-state">
+                        <div class="align-vertical">
+                            <h3>See style 4</h3>
+                            <p>Mustache retro chillwave YOLO four loko photo booth.</p>
+                            <a href="#" class="btn btn-outline outline-light" data-toggle="modal" data-target="#myModal15">See The Detail</a>
+                        </div>
+                    </div>
+                </div>
+                <div id="myModal15" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-lg">
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">style 4</h4>
+                            </div>
+                            <div class="modal-body">
+                                <img src="images/cosmetics2.jpg" style="max-width: 100%;" />
+                                <hr>
+                                <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!-- /.project-wrapper -->
+        </section>
+        <div class="container">
+            <div class="content-king" id="content-king">
+                <hr>
+                <h2 id="service" class="text-center">Our Service & Offer</h2>
+                <h4 id="service1" class="text-center">"LOREM IPSUM DOLOR SIT AMET"</h4>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                <div class="row">
+                    <div class="col-md-4 content-down">
+                        <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x fa-inverse fa-group"></i></span>
+                        <h3 class="text-center">Hair Treatments</h3>
+                        <hr> 
+                        <p class="text-justify">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+                    </div>
+                    <div class="col-md-4 content-down">
+                        <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x fa-inverse fa-star-o"></i></span>
+                        <h3 class="text-center">Hair Care</h3>
+                        <hr> 
+                        <p class="text-justify">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+                    </div>
+                    <div class="col-md-4 content-down">
+                        <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x fa-inverse fa-gift"></i></span>
+                        <h3 class="text-center">Free Gift</h3> 
+                        <hr>
+                        <p class="text-justify">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 content-down">
+                        <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x fa-inverse fa-heart"></i></span>
+                        <h3 class="text-center">Body Treatments</h3> 
+                        <hr>
+                        <p class="text-justify">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+                    </div>
+                    <div class="col-md-4 content-down">
+                        <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x fa-inverse fa-female"></i></span>
+                        <h3 class="text-center">Skin Care</h3> 
+                        <hr>
+                        <p class="text-justify">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+                    </div>
+                    <div class="col-md-4 content-down">
+                        <span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-stack-1x fa-inverse fa-wifi"></i></span>
+                        <h3 class="text-center">Free Wifi</h3> 
+                        <hr>
+                        <p class="text-justify">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p> 
+                    </div>
+                </div>
+            </div>
+        </div>   
+        <div class="banner">
+            <div class="isi-konten">
+                <h2>LOREM IPSUM DOLOR SIT AMET</h2>
+                <p>Lorem ipsum dolor sit amet adipiscing.Exercitationem  corporis suscipit.</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="underlined-title" id="banner-so">
+                <h1>Special Offers</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="banner-so">
+                        <h3 class="text-center">SPECIAL PRODUCT OFFER 1</h3> 
+                        <p class="text-center">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <a href="#" class="btn btn-outline outline-light" data-toggle="modal" data-target="#myModal10">See Product</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="banner-so1">
+                        <h3 class="text-center">SPECIAL PRODUCT OFFER 2</h3> 
+                        <p class="text-center">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                        <a href="#" class="btn btn-outline outline-light" data-toggle="modal" data-target="#myModal11">See Product</a> 
+                    </div>
+                </div>
+            </div>
+            <div id="myModal10" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">SPECIAL OFFER!</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="images/Makeup-Products.jpg" style="max-width: 100%;" />
+                            <hr>
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="myModal11" class="modal fade" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">SPECIAL OFFER!</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img src="images/Makeup-Products.jpg" style="max-width: 100%;" />
+                            <hr>
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="content-block team-2 team-2-2" id="team">
+            <div class="container">
+                <div class="underlined-title">
+                    <h1>Say Hello To The Team</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12 team-wrapper">
+                        <div class="team-item">
+                            <div class="team-thumb">
+                                <img src="images/women-1.jpg" class="img-responsive" alt="Member Image">
+                                <div class="image-overlay"></div>
+                                <a href="#" class="team-link"><i class="fa fa-3x fa-envelope-o"></i></a>
+                            </div>
+                            <div class="team-details">
+                                <h4>Alicia</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 team-wrapper">
+                        <div class="team-item">
+                            <div class="team-thumb">
+                                <img src="images/women-2.jpg" class="img-responsive" alt="Member Image">
+                                <div class="image-overlay"></div>
+                                <a href="#" class="team-link"><i class="fa fa-3x fa-envelope-o"></i></a>
+                            </div>
+                            <div class="team-details">
+                                <h4>Nelly</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 team-wrapper">
+                        <div class="team-item">
+                            <div class="team-thumb">
+                                <img src="images/women-3.jpg" class="img-responsive" alt="Member Image">
+                                <div class="image-overlay"></div>
+                                <a href="#" class="team-link"><i class="fa fa-3x fa-envelope-o"></i></a>
+                            </div>
+                            <div class="team-details">
+                                <h4>Emmily</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12 team-wrapper">
+                        <div class="team-item">
+                            <div class="team-thumb">
+                                <img src="images/women-4.jpg" class="img-responsive" alt="Member Image">
+                                <div class="image-overlay"></div>
+                                <a href="#" class="team-link"><i class="fa fa-3x fa-envelope-o"></i></a>
+                            </div>
+                            <div class="team-details">
+                                <h4>Ema</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.gallery-item-wrapper -->
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </section>
+        <!-- The content of your page would go here. -->
+        <div class="container">
+          <div class="underlined-title">
+            <h1>Find Me Here!</h1>
+          </div>
+        </div>
+        <div class="map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1982.6473266176358!2d106.87087880769722!3d-6.355891558924597!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69ecf391e322e3%3A0x84a8492a13c152c1!2sJl.+Tipar+Halim%2C+Mekarsari%2C+Cimanggis%2C+Kota+Depok%2C+Jawa+Barat+16452!5e0!3m2!1sen!2sid!4v1495595480348" style="border:0"></iframe>
+        </div>
+        <footer>
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row footer-info-agile">
+                        <div class="col-md-4">
+                            <div class="connect-social">
+                                <h4>Connect with us</h4>
+                                <section class="social">
+                                    <ul>
+                                        <li><a class="icon fb" href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a class="icon tw" href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a class="icon pin" href="#"><i class="fa fa-pinterest"></i></a></li>
+                                        <li><a class="icon db" href="#"><i class="fa fa-dribbble"></i></a></li>
+                                        <li><a class="icon gp" href="#"><i class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="col-md-3"> 
+                            <h4>Address</h4>
+                            <address>
+                                <ul>
+                                    <li>Indonesia, Jakarta Raya.</li>
+                                    <li>4th Floor, Menara Satu. Plaza Indonesia, Aoron Std.</li>
+                                    <li>SCBD, Jakarta Raya</li>
+                                    <li>Telephone : (+62) 00-0000-0000</li>
+                                    <li>Email : <a class="mail" href="mailto:your@example.com">info(at)example.com</a></li>
+                                </ul>
+                            </address>
+                        </div>
+                        
+                        <div class="col-md-5">
+                            <div class="connect-agileits newsletter">
+                                <h4>Newsletter</h4>
+                                <p>Subscribe to our newsletter and we will inform you about newest products and promotions.</p>
+                                <form action="#" method="post" class="newsletter">
+                                    <input class="email" type="email" placeholder="Your email address..." required="">
+                                    <input type="submit" class="submit" value="Subscribe">
+                                </form>
+                            </div>
+                        </div>
+                    </div>                     
+                </div>
+            </div>
+            
+            
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>© 2017 reihan@webmaster. All rights reserved | Design by sadikinasep</p>
+                </div>
+            </div>
+        </footer>
+        <a href="#home" data-toggle="tooltip" data-placement="left" title="To The Top" id="toTop" class="scroll" style="display: block;"> 
+            <span id="toTopHover" style="opacity: 0;"> </span>
+            <span id="toTopHover" style="opacity: 1;"> </span>
+        </a>
+        <script type="text/javascript">
+            jQuery(document).ready(function($) {
+                $(".scroll").click(function(event){     
+                    event.preventDefault();
+                    $('html,body').animate({scrollTop:$(this.hash).offset().top},900);
+                });
+            });
+        </script>
+
+
+        <script type="text/javascript" src="js/move-top.js"></script> 
+    </body>
+</html>
